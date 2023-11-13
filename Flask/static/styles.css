@@ -1,0 +1,92 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+ }
+
+ 
+.parent-div {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../static/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:white
+}
+
+.container {
+  font-family: "Raleway", sans-serif;
+  height: 60%;
+  width: 60%;
+  border: 2px solid white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.button{
+  margin: 20px;
+  position: relative;
+  top: 90px;
+  right: 190px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  
+}
+
+.button1{
+  margin: 20px;
+  position: relative;
+  top: 10px;
+  left: 200px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  
+}
+
+.emo{
+  font-size: 19px;
+}
+
+.mic {
+  height: 50px;
+  width: 50px;
+  border: 2px solid red;
+  border-radius: 40px;
+  padding: 10px;
+}
+.sub-container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sub-container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#recordButton {
+  border: none;
+  background: none;
+}
