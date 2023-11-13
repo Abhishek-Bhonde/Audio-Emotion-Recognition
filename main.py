@@ -16,7 +16,7 @@ model = pickle.load(open('D:/Projects/Sound Emotion Recognition/Flask/model.pkl'
 
 labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Pleasant Surprise', 'Sad']
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='template', static_folder='static')
 
 
 def extract_mfcc(filename):
