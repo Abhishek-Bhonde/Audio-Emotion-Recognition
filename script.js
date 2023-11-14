@@ -4,8 +4,6 @@ const audioFileInput = document.getElementById("audioFileInput");
 const uploadButton = document.getElementById("uploadButton");
 const status = document.getElementById("status");
 const audioPlayer = document.getElementById("audioPlayer");
-const micClosed = document.getElementById("micClosed");
-const micOpen = document.getElementById("micOpen");
 
 let mediaRecorder;
 let audioChunks = [];
@@ -13,8 +11,6 @@ let audioChunks = [];
 recordButton.addEventListener("click", () => {
   if (mediaRecorder && mediaRecorder.state === "recording") {
     mediaRecorder.stop();
-    micClosed.style.display = "inline";
-    micOpen.style.display = "none";
   } else {
     navigator.mediaDevices
       .getUserMedia({ audio: true })
@@ -27,9 +23,7 @@ recordButton.addEventListener("click", () => {
 
         mediaRecorder.onstop = () => {
           const audioBlob = new Blob(audioChunks, { type: "audio/wav" });
-          const fileName = "my_recording.wav";
           const blobWithFileName = new Blob([audioBlob], { type: audioBlob.type });
-          blobWithFileName.name = fileName;
           const audioURL = URL.createObjectURL(blobWithFileName);
 
           audioPlayer.src = audioURL;
@@ -50,8 +44,6 @@ recordButton.addEventListener("click", () => {
         };
 
         mediaRecorder.start();
-        micClosed.style.display = "none";
-        micOpen.style.display = "inline";
       })
       .catch((error) => console.error(error));
   }
