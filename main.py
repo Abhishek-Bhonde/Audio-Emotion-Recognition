@@ -41,7 +41,7 @@ def upload_form():
     return render_template('index.html', prediction='', error='')
 
 @app.route('/recognize-emotion', methods=['POST'])
-def predict_emotion():
+def recognize_emotion():
     if 'audio' not in request.files:
         return jsonify({'error': 'No audio part'})
 
