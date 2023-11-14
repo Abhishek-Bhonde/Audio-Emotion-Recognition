@@ -53,7 +53,7 @@ def predict_emotion():
     if audio.filename == '':
         return jsonify({'error': 'No file selected'})
 
-    temp_audio_path = 'temp_audio.wav'
+    temp_audio_path = 'demo.wav'
     audio.save(temp_audio_path)
 
     try:
