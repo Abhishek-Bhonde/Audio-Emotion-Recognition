@@ -24,7 +24,7 @@ app = Flask(__name__, template_folder='template', static_folder='static')
 def index():
     return render_template('index.html', prediction='', error='')
 
-@app.route('/recognize-emotion', methods=['POST'])
+@app.route('/recognize_emotion', methods=['POST'])
 def recognize_emotion():
     if 'audio' not in request.files:
         return jsonify({'error': 'No audio file provided'})
