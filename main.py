@@ -1,10 +1,4 @@
-import pandas as pd
 import numpy as np
-import os
-import tempfile
-import soundfile as sf
-
-import pickle
 from tensorflow import keras
 from keras.models import load_model
 from flask import Flask, render_template, request, redirect, url_for,jsonify
