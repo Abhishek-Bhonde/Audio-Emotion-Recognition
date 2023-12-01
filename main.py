@@ -5,8 +5,6 @@ from flask import Flask, render_template, request, redirect, url_for,jsonify
 import librosa
 import python_speech_features
 
-import librosa.display
-
 model = load_model('audio.h5')
 
 emotions = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Pleasant Surprise', 'Sad']
