@@ -6,6 +6,7 @@ const status = document.getElementById("status");
 const audioPlayer = document.getElementById("audioPlayer");
 const micClosed = document.getElementById("micClosed");
 const micOpen = document.getElementById("micOpen");
+const serverURL = "https://audio-emotion-recognition.onrender.com";
 
 let mediaRecorder;
 let audioChunks = [];
@@ -74,7 +75,7 @@ uploadButton.addEventListener("click", () => {
   const formData = new FormData();
   formData.append("audio", selectedFile);
 
-  fetch("/recognize-emotion", {
+  fetch(`${serverURL}/recognize-emotion`, {
     method: "POST",
     body: formData,
   })
