@@ -74,7 +74,7 @@ uploadButton.addEventListener("click", () => {
   const formData = new FormData();
   formData.append("audio", selectedFile);
 
-  fetch('/recognize-emotion'), {
+  fetch('/recognize-emotion', {
     method: "POST",
     body: formData,
   })
