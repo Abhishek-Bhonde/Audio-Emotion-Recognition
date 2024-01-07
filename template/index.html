@@ -1,44 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Audio Emotion Recognizer</title>
-    <link rel="stylesheet" type="text/css" href="static/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Emotion Recognition</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"
       rel="stylesheet"
     />
-  </head>
-  <body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
     <div class="parent-div">
-      <div class="container">
-        <div class="sub-container1">
-          <h1>Audio Emotion Recognition</h1>
-          <p>Detect involved emotions in Audio</p>
+        <div class="container">
+          <div class="sub-container1">
+             <h1>Audio Emotion Recognition</h1>
+            <p>Detect involved emotions in Audio</p>
+          </div>
+          <div class="sub-container2">
+        
+        <form method="post" action="{{ url_for('recognize_emotion') }}" enctype="multipart/form-data">
+            <input type="file" class='button'name="audio" accept=".wav, .mp3" required>
+            <button type="submit" class=" button1">Detect</button>
+        </form>
+
+
+        <div class="result-container">
+
+        {% if prediction %}
+            <h2>Predicted Emotion:</h2>
+            <p>{{ prediction }}</p>
+        {% endif %}
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
         </div>
-        <div class="sub-container2">
-          
-          <button id="recordButton">
-            <!-- <img class="mic" src="mic.svg" alt="mic" id="micClosed" /> -->
-            <!-- <img src="{{ url_for('static', filename='mic.svg') }}" alt="Microphone Icon" id="micClosed" class="mic">
-            <img src="{{ url_for('static', filename='mic_open.svg') }}" alt="Open Microphone Icon" id="micOpen" style="display: none" class="mic"> -->
-            <!-- <img
-              class="mic"
-              src="mic_open.svg"
-              alt="mic open"
-              id="micOpen"
-              style="display: none"
-            /> -->
-          </button>
-          <input type="file" id="audioFileInput" accept=".wav" style="display: none;">
-          <button id="chooseFileButton" class="button" >Choose File</button>
-          <button id="uploadButton" class="button1">Detect</button>
-          <p id="status" class="emo"></p>
         </div>
-        <audio id="audioPlayer" controls style="display: none"></audio>
-      </div>
+        </div>
     </div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script> 
-  </body>
+</body>
 </html>
