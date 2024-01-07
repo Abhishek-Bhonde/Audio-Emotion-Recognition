@@ -7,7 +7,7 @@ model = load_model('audio.h5')
 
 emotions = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Pleasant Surprise', 'Sad']
 
-app = Flask(__name__, template_folder="templates", static_folder="static")
+app = Flask(__name__, template_folder="template", static_folder="static")
 
 @app.route('/')
 def index():
